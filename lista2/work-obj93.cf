@@ -1,0 +1,30 @@
+v 4
+file . "zad5.vhd" "a09f897aa8659fd4cbff694d2bb316d2cc3482ca" "20170312182807.998":
+  entity zad5 at 1( 0) + 0 on 59;
+  architecture behavioral of zad5 at 15( 288) + 0 on 60;
+file . "Xand.vhd" "68d5738de0692ff6bb2564d61c7fe86ee13862d4" "20170312180148.076":
+  entity xand at 1( 0) + 0 on 51;
+  architecture behavioral of xand at 15( 290) + 0 on 52;
+file . "example-tb.vhd" "4f41a9a51447415f019dff95ebe30bec0917e7f1" "20170308111022.502":
+  entity example_tb at 1( 0) + 0 on 39;
+  architecture behavior of example_tb at 10( 147) + 0 on 40;
+file . "lab2-gates.vhd" "d5927421b9e6635053fc923a939b5bd4c0dbe7f4" "20170308111038.001":
+  entity gateand at 4( 16) + 0 on 41;
+  architecture behavioral of gateand at 15( 156) + 0 on 42;
+  entity gateor at 23( 258) + 0 on 43;
+  architecture behavioral of gateor at 34( 396) + 0 on 44;
+  entity gatexor at 43( 498) + 0 on 45;
+  architecture behavioral of gatexor at 54( 638) + 0 on 46;
+  entity gatenot at 62( 741) + 0 on 47;
+  architecture behavioral of gatenot at 72( 865) + 0 on 48;
+  entity mux at 80( 985) + 0 on 49;
+  architecture zachowanie of mux at 91( 1141) + 0 on 50;
+file . "example.vhd" "8c6c89b5ff44c3dc1e96346bd3069bd7b583d026" "20170308110959.127":
+  entity example at 1( 0) + 0 on 37;
+  architecture synthetic of example at 12( 135) + 0 on 38;
+file . "Xand_tb.vhd" "9947fe36b214999047926b8affffa28b207cbc71" "20170312180932.728":
+  entity xand_tb at 1( 0) + 0 on 57;
+  architecture behavior of xand_tb at 9( 105) + 0 on 58;
+file . "zad5_tb.vhd" "f57028021211b01bfad24c20d5d6a9e1b8268e16" "20170312183019.952":
+  entity zad5_tb at 1( 0) + 0 on 63;
+  architecture behavior of zad5_tb at 9( 105) + 0 on 64;
