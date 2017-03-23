@@ -80,10 +80,13 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin
+   		data_in <= x"a0";
       for i in 0 to 7 loop
-      	address <= std_logic_vector(unsigned(adress) + 1);
-      end loop
+      	wait on clk until falling_edge(clk);
+      	assert data_out_a0 = crc_out;
+      	address <= std_logic_vector( unsigned(address) + 1);
+      end loop;
       wait;
    end process;
 
