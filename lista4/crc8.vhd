@@ -18,9 +18,10 @@ begin
 
   process (clk, data_in, newCRC)
   begin
-    if clk = '1' and rising_edge(clk) 
-	 then
-		newCRC <= nextCRC(data_in, newCRC);
+    if data_in'event then
+      newCRC <= (others => '0');
+    elsif clk = '1' and rising_edge(clk) then
+		  newCRC <= nextCRC(data_in, newCRC);
 	 else 
 	   null;
 	 end if;

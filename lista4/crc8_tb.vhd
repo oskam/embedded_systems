@@ -84,7 +84,15 @@ BEGIN
    		data_in <= x"a0";
       for i in 0 to 7 loop
       	wait on clk until falling_edge(clk);
-      	assert data_out_a0 = crc_out;
+      	assert data_out_a0 = crc_out report "invalid crc value" severity error;
+      	address <= std_logic_vector( unsigned(address) + 1);
+      end loop;
+
+      address <= (others => '0');
+      data_in <= x"66";
+      for i in 0 to 7 loop
+      	wait on clk until falling_edge(clk);
+      	assert data_out_66 = crc_out report "invalid crc value" severity error;
       	address <= std_logic_vector( unsigned(address) + 1);
       end loop;
       wait;
