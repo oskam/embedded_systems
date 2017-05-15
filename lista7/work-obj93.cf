@@ -1,0 +1,10 @@
+v 4
+file . "lossy_channel_tb.vhd" "c475c4db34e67f890f5d720c7efdfa8dc012f566" "20170515161351.016":
+  entity lossy_channel_tb at 2( 1) + 0 on 23;
+  architecture behavior of lossy_channel_tb at 9( 123) + 0 on 24;
+file . "lfsr.vhd" "6c1ae5b402a8b517a0a6268c0fe77341ccec0f24" "20170514093238.035":
+  entity lfsr at 1( 0) + 0 on 11;
+  architecture behavioral of lfsr at 10( 180) + 0 on 12;
+file . "lossy_channel.vhd" "dab1908ea0eb5b192baac7207626d3afc78926b0" "20170514093248.051":
+  entity lossy_channel at 6( 209) + 0 on 13;
+  architecture behavioral of lossy_channel at 17( 508) + 0 on 14;

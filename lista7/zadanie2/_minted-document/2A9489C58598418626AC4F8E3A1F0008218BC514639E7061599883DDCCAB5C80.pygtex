@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Instantiate the Unit Under Test (UUT)}
+\PYG{n}{uut}\PYG{o}{:} \PYG{n}{lossy\PYGZus{}channel}
+\PYG{k}{GENERIC} \PYG{k}{MAP} \PYG{p}{(} \PYG{n}{N} \PYG{o}{=\PYGZgt{}} \PYG{n}{WIDTH} \PYG{p}{)}
+\PYG{k}{PORT} \PYG{k}{MAP} \PYG{p}{(}
+\PYG{n}{data\PYGZus{}in} \PYG{o}{=\PYGZgt{}} \PYG{n}{data\PYGZus{}in}\PYG{p}{,}
+\PYG{n}{clk} \PYG{o}{=\PYGZgt{}} \PYG{n}{clk}\PYG{p}{,}
+\PYG{n}{data\PYGZus{}out} \PYG{o}{=\PYGZgt{}} \PYG{n}{data\PYGZus{}out}
+\PYG{p}{);}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Clock process definitions}
+\PYG{n}{clk\PYGZus{}process} \PYG{o}{:}\PYG{k}{process}
+\PYG{k}{begin}
+\PYG{n}{clk} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{wait} \PYG{k}{for} \PYG{n}{clk\PYGZus{}period}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{n}{clk} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{wait} \PYG{k}{for} \PYG{n}{clk\PYGZus{}period}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+\PYG{n}{eencoder}\PYG{o}{:} \PYG{n}{encoder}
+\PYG{k}{PORT} \PYG{k}{MAP}\PYG{p}{(}
+\PYG{n}{data\PYGZus{}in} \PYG{o}{=\PYGZgt{}} \PYG{n}{encoder\PYGZus{}data\PYGZus{}in}\PYG{p}{,}
+\PYG{n}{data\PYGZus{}out} \PYG{o}{=\PYGZgt{}} \PYG{n}{data\PYGZus{}in}
+\PYG{p}{);}
+
+\PYG{n}{ddecoder}\PYG{o}{:} \PYG{n}{decoder}
+\PYG{k}{PORT} \PYG{k}{MAP}\PYG{p}{(}
+\PYG{n}{data\PYGZus{}in} \PYG{o}{=\PYGZgt{}} \PYG{n}{data\PYGZus{}out}\PYG{p}{,}
+\PYG{n}{error\PYGZus{}out} \PYG{o}{=\PYGZgt{}} \PYG{n}{error\PYGZus{}out}\PYG{p}{,}
+\PYG{n}{data\PYGZus{}out} \PYG{o}{=\PYGZgt{}} \PYG{n}{decoder\PYGZus{}data\PYGZus{}out}
+\PYG{p}{);}
+\end{Verbatim}

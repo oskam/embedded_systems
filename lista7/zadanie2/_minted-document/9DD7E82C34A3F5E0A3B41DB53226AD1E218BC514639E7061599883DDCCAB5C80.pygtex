@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Component Declaration for the Unit Under Test (UUT)}
+\PYG{k}{COMPONENT} \PYG{n+nc}{lossy\PYGZus{}channel}
+\PYG{k}{GENERIC} \PYG{p}{(}\PYG{n}{N} \PYG{o}{:} \PYG{k+kt}{positive}\PYG{p}{);}
+\PYG{k}{PORT}\PYG{p}{(}
+\PYG{n}{data\PYGZus{}in} \PYG{o}{:} \PYG{k}{IN}  \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{N}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{n}{clk} \PYG{o}{:} \PYG{k}{IN}  \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+\PYG{n}{data\PYGZus{}out} \PYG{o}{:} \PYG{k}{OUT}  \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{n}{N}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{p}{);}
+\PYG{k}{END} \PYG{k}{COMPONENT}\PYG{p}{;}
+
+\PYG{k}{COMPONENT} \PYG{n+nc}{encoder} \PYG{k}{IS}
+\PYG{k}{PORT}\PYG{p}{(}
+\PYG{n}{data\PYGZus{}in} \PYG{o}{:} \PYG{k}{IN}  \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{3} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{n}{data\PYGZus{}out} \PYG{o}{:} \PYG{k}{OUT}  \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{p}{);}
+\PYG{k}{END} \PYG{k}{COMPONENT}\PYG{p}{;}
+
+\PYG{k}{COMPONENT} \PYG{n+nc}{decoder} \PYG{k}{IS}
+\PYG{k}{PORT}\PYG{p}{(}
+\PYG{n}{data\PYGZus{}out}\PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{3} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{n}{data\PYGZus{}in}\PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{6} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{n}{error\PYGZus{}out}\PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{p}{);}
+\PYG{k}{END} \PYG{k}{COMPONENT}\PYG{p}{;}
+\end{Verbatim}
