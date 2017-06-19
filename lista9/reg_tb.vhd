@@ -84,7 +84,7 @@ BEGIN
         -- WRITE REG2
         -- address
         -- use reg in READ_BUS
-        conn_bus <= "110010000";
+        conn_bus <= "110011110";
         wait for clk_period;
         -- data
         conn_bus <= "111111010";
@@ -92,7 +92,7 @@ BEGIN
 
         -- check REG
         wait for clk_period;
-        assert register_out = "111" report "out_reg != 7";
+        assert register_out = "010" report "out_reg != 2";
 
         wait;
     end process;

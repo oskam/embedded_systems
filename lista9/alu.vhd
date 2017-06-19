@@ -91,25 +91,6 @@ begin
                         -- calculate result of addition
                         ac_int := ac_int + mbr_int;
 
-                        -- check for overflow
-                        if ac_int > 127
-                        then
-                            ac_int := 127;
-                        end if;
-                        if ac_int < -127
-                        then
-                            ac_int := -127;
-                        end if;
-
-                        -- set sign
-                        -- convert result number to signal
-                        if ac_int < 0
-                        then
-                            result_reg <= "01" & std_logic_vector(to_unsigned(-1 * ac_int, 7));
-                        else
-                            result_reg <= "00" & std_logic_vector(to_unsigned(ac_int, 7));
-                        end if;
-
                         next_s <= WRITE_BUS;
 
                     elsif q(4 downto 2) = "000" -- SUBTRACTION
@@ -130,25 +111,6 @@ begin
 
                         -- calculate result of subtraction
                         ac_int := ac_int - mbr_int;
-
-                        -- check for overflow
-                        if ac_int > 127
-                        then
-                            ac_int := 127;
-                        end if;
-                        if ac_int < -127
-                        then
-                            ac_int := -127;
-                        end if;
-
-                        -- set sign
-                        -- convert result number to signal
-                        if ac_int < 0
-                        then
-                            result_reg <= "01" & std_logic_vector(to_unsigned(-1 * ac_int, 7));
-                        else
-                            result_reg <= "00" & std_logic_vector(to_unsigned(ac_int, 7));
-                        end if;
 
                         next_s <= WRITE_BUS;
 
@@ -184,6 +146,27 @@ begin
                 end if;
 
             when WRITE_BUS =>
+                -- check for overflow
+                if ac_int > 127
+                then
+                    ac_int := 127;
+                    report "overflow, reduced to 127" severity warning;
+                end if;
+                if ac_int < -127
+                then
+                    ac_int := -127;
+                    report "overflow, reduced to -127" severity warning;
+                end if;
+
+                -- set sign
+                -- convert result number to signal
+                if ac_int < 0
+                then
+                    result_reg <= "01" & std_logic_vector(to_unsigned(-1 * ac_int, 7));
+                else
+                    result_reg <= "00" & std_logic_vector(to_unsigned(ac_int, 7));
+                end if;
+
                 sending <= '1';
                 next_s <= IDLE;
 

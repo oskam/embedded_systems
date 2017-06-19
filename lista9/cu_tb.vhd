@@ -92,7 +92,7 @@ begin
     ram_unit: ram
 	GENERIC MAP (
         ID => RAM_ID,
-        filename => "test4.marie"
+        filename => "test.marie"
     )
 	PORT MAP (
         conn_bus   => conn_bus,
@@ -110,17 +110,6 @@ begin
         ac_reg_in  => ac_reg,
         comparison_signal => cmp_signal,
         clk        => clk
-    );
-
-    ir_register: reg
-	GENERIC MAP (
-        ID       => REG_ID,
-        REG_ID   => IR_REG_ID,
-        REG_SIZE => 9
-    )
-	PORT MAP (
-        conn_bus => conn_bus,
-        clk => clk
     );
 
     mar_register: reg

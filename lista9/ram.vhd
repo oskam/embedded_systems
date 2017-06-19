@@ -17,11 +17,11 @@ entity ram is
     );
     port(
         -- conn_bus: shared BUS
-        conn_bus : inout std_logic_vector(8 downto 0);
+        conn_bus   : inout std_logic_vector(8 downto 0);
         -- adress register input
-        mar_reg_in  : in std_logic_vector(4 downto 0);
+        mar_reg_in : in std_logic_vector(4 downto 0);
         -- clk: system clock for synchronization
-        clk      : in std_logic
+        clk        : in std_logic
     );
 end entity ram;
 
@@ -43,9 +43,9 @@ architecture behavior of ram is
     signal sending    : std_logic := '0';
 
     -- memory cells
-    constant ROM_SIZE : integer := 2 ** 5;
+    constant RAM_SIZE : integer := 2 ** 5;
     -- new type for memory, ROM_SIZE of 9 bit cells
-    type ram_type     is array (0 to ROM_SIZE-1) of std_logic_vector(8 downto 0);
+    type ram_type     is array (0 to RAM_SIZE-1) of std_logic_vector(8 downto 0);
 
     -- function to load file to memory on system start
     impure function read_file(filename : in string) return ram_type is
@@ -59,7 +59,7 @@ architecture behavior of ram is
         variable memory   : ram_type;
     begin
         -- for every aviable memory cell
-        for i in 0 to ROM_SIZE-1 loop
+        for i in 0 to RAM_SIZE-1 loop
             -- exit earlier when end of file is reached
             exit when endfile(opened_file);
 
@@ -68,7 +68,7 @@ architecture behavior of ram is
 
             -- for every index in line_var (1 to 9)
             -- word is indexed 8 downto 0
-            for k in line_var'range loop
+            for k in 1 to 9 loop
                 case line_var(k) is
                     -- copy line to std_logic_vector word
                     when '0' => word(9-k) := '0';

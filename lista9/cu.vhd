@@ -293,7 +293,7 @@ begin
                         next_s <= EXECUTE_OUTPUT;
 
                     when SKIPCOND_OPCODE =>
-                        case q(4 downto 3) is
+                        case address(4 downto 3) is
                             when "00" => -- AC < 0
                                 result_reg <= ALU_ID & ALU_COMP_LT_MODE & "00";
                                 next_s <= EXECUTE_SKIP_LT_1;
@@ -389,9 +389,9 @@ begin
                 if number < 0
                 then
                     number := -1 * number;
-                    result_reg <= "01" & std_logic_vector(to_unsigned(number, 7));
+                    result_reg <= NEGATIVE_NUM & std_logic_vector(to_unsigned(number, 7));
                 else
-                    result_reg <= "00" & std_logic_vector(to_unsigned(number, 7));
+                    result_reg <= POSITIVE_NUM & std_logic_vector(to_unsigned(number, 7));
                 end if;
                 next_s <= EXECUTE_INPUT_2;
 

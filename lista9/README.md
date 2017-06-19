@@ -71,7 +71,7 @@ ALU is an unit responsible for addition (Add X), subtractions (Subt X) and compa
 - `010` for comparison `AC = 0`,
 - `001` for comparison `AC < 0`.
 
-> e.g. to activate ALU in addition mode bus should be set to `1101 01 ???`, where `?` are either `0` or `1`.
+> e.g. to activate ALU in addition mode bus should be set to `1101 111 ??`, where `?` are either `0` or `1`.
 
 When comparison yields _true_ ALU signal `comparison_signal` connected to CU is set to `1`.
 

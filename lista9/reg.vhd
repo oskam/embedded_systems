@@ -45,7 +45,7 @@ architecture behavior of reg is
     signal sending   : std_logic := '0';
 
     -- register
-    shared variable var_reg : std_logic_vector(REG_SIZE-1 downto 0) := (others => 'Z');
+    signal var_reg : std_logic_vector(REG_SIZE-1 downto 0) := (others => 'Z');
 
 begin
     clock: process(clk)
@@ -80,7 +80,7 @@ begin
                 sending <= '0';
             when READ_BUS =>
                 vstate <= "01";
-                var_reg := q(REG_SIZE-1 downto 0);
+                var_reg <= q(REG_SIZE-1 downto 0);
                 next_s <= IDLE;
             when WRITE_BUS =>
                 -- if REG_SIZE is lower than bus size, result have to be left padded with 0s

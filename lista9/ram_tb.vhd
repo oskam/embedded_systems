@@ -11,13 +11,13 @@ ARCHITECTURE behavior OF ram_tb IS
 
     COMPONENT ram is
         generic(
-            ID    : std_logic_vector (3 downto 0);
+            ID       : std_logic_vector (3 downto 0);
             filename : string
         );
         port(
-            conn_bus : inout std_logic_vector(8 downto 0);
-            mar_reg  : in std_logic_vector(4 downto 0);
-            clk      : in std_logic
+            conn_bus   : inout std_logic_vector(8 downto 0);
+            mar_reg_in : in std_logic_vector(4 downto 0);
+            clk        : in std_logic
         );
     END COMPONENT;
 
@@ -42,9 +42,9 @@ BEGIN
         filename => "test_file.marie"
     )
 	PORT MAP (
-        conn_bus => conn_bus,
-        mar_reg => mar_reg,
-        clk => clk
+        conn_bus   => conn_bus,
+        mar_reg_in => mar_reg,
+        clk        => clk
     );
 
     -- Clock process definitions

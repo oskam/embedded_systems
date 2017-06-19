@@ -1,0 +1,31 @@
+v 4
+file . "cu.vhd" "4caa83fecbc122b17920627d5146743e0093dc31" "20170618171746.121":
+  entity cu at 1( 0) + 0 on 63;
+  architecture behavior of cu at 17( 427) + 0 on 64;
+file . "alu_tb.vhd" "b0575991a96b51eac6610920f400de1721373869" "20170618160157.680":
+  entity alu_tb at 1( 0) + 0 on 47;
+  architecture behavior of alu_tb at 8( 100) + 0 on 48;
+file . "pc_tb.vhd" "32cee0e6e8a9118dc75ad67b8c94330688c3b774" "20170618150749.706":
+  entity pc_tb at 1( 0) + 0 on 41;
+  architecture behavior of pc_tb at 8( 98) + 0 on 42;
+file . "pc.vhd" "f6b29e2045567ac2d968313b0fee617ed23d8ed9" "20170618150747.525":
+  entity pc at 1( 0) + 0 on 39;
+  architecture behavior of pc at 26( 1044) + 0 on 40;
+file . "reg.vhd" "0a0269ab5f7a579f6c67b93f9882756620fafd85" "20170618145532.570":
+  entity reg at 1( 0) + 0 on 29;
+  architecture behavior of reg at 31( 1385) + 0 on 30;
+file . "ram.vhd" "39c0a22913db5c28e0b5f736a8f0deb1bcab43cf" "20170618142743.012":
+  entity ram at 1( 0) + 0 on 21;
+  architecture behavior of ram at 28( 1097) + 0 on 22;
+file . "ram_tb.vhd" "3f4bb78a6a9936296eec829de5d345b145a04fbb" "20170618142744.982":
+  entity ram_tb at 1( 0) + 0 on 23;
+  architecture behavior of ram_tb at 8( 100) + 0 on 24;
+file . "reg_tb.vhd" "bb7fed107cff5c06c806bfd85a1093430ec35cf5" "20170618145534.394":
+  entity reg_tb at 1( 0) + 0 on 31;
+  architecture behavior of reg_tb at 8( 100) + 0 on 32;
+file . "alu.vhd" "b1bb954f794e98b4ba15522f0eb0efca674c48bf" "20170618155822.443":
+  entity alu at 1( 0) + 0 on 43;
+  architecture behavior of alu at 30( 1209) + 0 on 44;
+file . "cu_tb.vhd" "5bb6af6871f03e720345a8f7bf0ee296c41e4fbd" "20170618201640.179":
+  entity cu_tb at 1( 0) + 0 on 89;
+  architecture behavior of cu_tb at 9( 118) + 0 on 90;

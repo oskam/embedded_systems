@@ -91,27 +91,27 @@ BEGIN
         conn_bus <= "110110000";
         wait for clk_period;
         conn_bus <= (others => 'Z');
-        assert cmp_signal = '1' report "comparison > fail"; -- 28 > 0
+        assert cmp_signal = '1' report "comparison > fail"; -- 26 > 0
 
-        -- Activate ALU in COMPARISON > mode
+        -- Activate ALU in COMPARISON < mode
         conn_bus <= "110100100";
         wait for clk_period;
         conn_bus <= (others => 'Z');
-        assert cmp_signal = '0' report "comparison > fail"; -- 28 !< 0
+        assert cmp_signal = '0' report "comparison < fail"; -- 26 !< 0
 
         ac_reg <= "000000000"; -- 0
-        -- Activate ALU in COMPARISON mode
+        -- Activate ALU in COMPARISON = mode
         conn_bus <= "110101000";
         wait for clk_period;
         conn_bus <= (others => 'Z');
         assert cmp_signal = '1' report "comparison = fail"; -- 0 = 0
 
-        ac_reg <= "010001100"; -- -12
-        -- Activate ALU in COMPARISON mode
+        ac_reg <= "010001101"; -- -13
+        -- Activate ALU in COMPARISON < mode
         conn_bus <= "110100100";
         wait for clk_period;
         conn_bus <= (others => 'Z');
-        assert cmp_signal = '1' report "comparison < fail"; -- -12 < 0
+        assert cmp_signal = '1' report "comparison < fail"; -- -13 < 0
 
         wait;
     end process;
