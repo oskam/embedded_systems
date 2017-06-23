@@ -14,13 +14,13 @@ ARCHITECTURE behavior OF slave_tb IS
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT slave
-	 generic ( identifier : std_logic_vector (7 downto 0) );
+		generic ( identifier : std_logic_vector (7 downto 0) );
     PORT(
-         conn_bus : INOUT  std_logic_vector(7 downto 0);
-         clk : IN  std_logic;
-			state : out STD_LOGIC_VECTOR (5 downto 0);
-			vq : out std_logic_vector (7 downto 0);
-			vcurrent_cmd : out std_logic_vector(3 downto 0)
+        conn_bus : INOUT  std_logic_vector(7 downto 0);
+        clk : IN  std_logic;
+		state : out STD_LOGIC_VECTOR (5 downto 0);
+		vq : out std_logic_vector (7 downto 0);
+		vcurrent_cmd : out std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF slave_tb IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: slave 
+	uut: slave 
 	GENERIC MAP (identifier => "10101010")
 	PORT MAP (
           conn_bus => conn_bus,

@@ -194,11 +194,9 @@ begin
             when RST
                 => result_reg <= "00000000";
             when HENC
-                => result_reg <= "00000000";
-                result_reg <= hamming_encoder(q(3 downto 0));
+                => result_reg <= hamming_encoder(q(3 downto 0));
             when HDEC
-                => result_reg <= "00000000";
-                result_reg <= hamming_decoder(q(6 downto 0));
+                => result_reg <= hamming_decoder(q(6 downto 0));
 			--
 			-- here other commands execution
 			--

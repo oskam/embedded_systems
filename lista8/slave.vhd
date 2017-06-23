@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.ALL;
 --		3) (optional) cmd_args (8 bits)
 --
 -- currently supported commands: 
--- 	* ID 			[0010] - get device address
+-- 	* ID 		[0010] - get device address
 -- 	* DATA_REQ 	[1111] - send current result in the next clockpulse
 -- 	* NOP 		[0000] - don't do anything
 -----------------------------------------------------------------------
@@ -23,10 +23,10 @@ use IEEE.NUMERIC_STD.ALL;
 entity slave is
     generic ( identifier : std_logic_vector (7 downto 0) := "10101010" );
     Port ( conn_bus : inout  STD_LOGIC_VECTOR (7 downto 0);
-           clk : in  STD_LOGIC;
-			  state : out STD_LOGIC_VECTOR (5 downto 0);
-			  vq : out std_logic_vector (7 downto 0);
-			  vcurrent_cmd : out std_logic_vector(3 downto 0)
+        	clk : in  STD_LOGIC;
+			state : out STD_LOGIC_VECTOR (5 downto 0);
+			vq : out std_logic_vector (7 downto 0);
+			vcurrent_cmd : out std_logic_vector(3 downto 0)
 			  );
 end slave;
 
@@ -126,10 +126,10 @@ state <= vstate;
 vq    <= q;
 with current_cmd select
  vcurrent_cmd <= "0001" when ADD,
-					  "0010" when ID, 
-					  "0011" when CRC, 
-					  "0100" when DATA_REQ,
-					  "0000" when others;
+				 "0010" when ID, 
+				 "0011" when CRC, 
+				 "0100" when DATA_REQ,
+				 "0000" when others;
 
 
 end Behavioral;
